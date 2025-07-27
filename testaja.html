@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kirimin ke WA</title>
+</head>
+<body>
+
+  <h2>Ketik Pesan Buat Pacar 😘</h2>
+  <input type="text" id="pesan" placeholder="Tulis pesan di sini..." style="width: 300px;">
+  <button onclick="kirimKeWA()">Kirim ke WhatsApp</button>
+
+  <script>
+    function kirimKeWA() {
+      const noHP = "6281234567890"; // ganti dengan nomor tujuan (awali dengan 62, tanpa +)
+      const pesan = document.getElementById("pesan").value;
+      const encoded = encodeURIComponent(pesan);
+      const waLink = `https://wa.me/${+6281211846570}?text=${encoded}`;
+      window.open(waLink, "_blank"); // buka di tab baru
+    }
+
+    // Enter langsung kirim
+    document.getElementById("pesan").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        kirimKeWA();
+      }
+    });
+  </script>
+
+</body>
+</html>
