@@ -14,9 +14,9 @@
     <meta property="og:image"
         content="https://designtocodes.com/wp-content/uploads/2024/04/Best-EntroLaunch-Onepage-Bootstrap-Templates-DesignToCodes.jpg">
     <!-- Title -->
-    <title>Entro Launch | Home</title>
+    <title>Happy Birthday!</title>
     <!-- Favicon -->
-    <link rel="icon" id="favicon" href="./assets/images/love.svg" type="image/gif" sizes="16x16">
+    <link rel="icon" id="favicon" href="./assets/images/confetti.png" type="image/gif" sizes="16x16">
     <!-- Google Font Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,12 @@
                 </div>
                 <div class="modal-body">
                     <p>Sayangku tersayang...</p>
-                    <p>[Isi surat romantis kamu di sini]</p>
+                    <p>Selamat ulang tahun yang ke-20, sayangku! 🎉💖 Tiga tahun kita bersama, dan setiap harinya aku bersyukur punya kamu yang selalu setia di sampingku. Doa terbesarku hari ini, semoga kamu makin berbakti sama kedua orang tua, diberi kekuatan dan kesabaran buat nungguin aku sampai lulus kuliah dan kita bisa memulai hidup baru bersama. Aku janji akan berusaha sebaik mungkin buat jadi orang yang layak untuk kamu.</p>
+                    <p>Semoga hubungan kita bertahan lama, sampai maut memisahkan. Aku ingin kita selalu kompak, kalau ada rasa bosan, kita bicarakan bareng-bareng dan cari solusinya. Aku tida mau kehilangan kamu hanya karena hal-hal sepele.</p>
+                    <p>Aku juga berdoa semoga kamu dapat kerjaan yang lebih nyaman dan gajinya lebih besar, biar kamu tida capek-capek banget. Kamu udah kuat banget sampai sekarang, dan aku bangga sama kamu. Oh ya, semoga kamu tambah cantik (meskipun udah cantik banget sekarang) dan tambah sabar ngadepin aku yang suka minta dikabarin terus, hehe.                    </p>
+                    <p>Satu hal yang pasti, aku tida akan pernah berpaling dari kamu, meskipun nanti aku udah sukses. Kamu yang percaya sama aku dari nol, nemenin aku melewati semua susah senang. Aku tida akan lupa itu. Kamu adalah orang yang aku ingin lihat tersenyum setiap hari, sampai tua nanti.</p>
+                    <p>I love you more than words can say.</p>
+                    <p>From Razaan (Chagiya), To Nada (My Love) 💌✨</p>
                 </div>
             </div>
         </div>
@@ -134,7 +139,9 @@
 
     <!--  Preloader Start  -->
     <div class="preloader">
-        <img src="./assets/images/love.svg" alt="Preloader Logo">
+        <img src="./assets/images/confetti.png" alt="Preloader Logo">
+        <span style="color: #8a2be2; font-family: 'Rubik', sans-serif; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.5px;">
+            Happy Birthday!</span>
     </div>
     <!--  Preloader End  -->
 
@@ -145,7 +152,7 @@
             <nav class="navbar navbar-expand-lg" id="d2c_main_nav">
                 <!-- Logo -->
                 <a class="navbar-brand" href="./index.html">
-                    <img src="./assets/images/love.svg" style="width: 40px; margin-right: 10px;" alt="Logo">
+                    <img src="./assets/images/confetti.png" style="width: 40px; margin-right: 10px;" alt="Logo">
                     <span
                         style="color: #8a2be2; font-family: 'Rubik', sans-serif; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.5px;">Happy
                         Birthday!</span>
@@ -571,7 +578,7 @@
                             🌟
                         </div>
                         <h4>Jadian</h4>
-                        <p>Detik-detik paling berharga ketika kita resmi menjadi pasangan</p>
+                        <p>Pada Tanggal 21 Agustus 2022 Detik-detik paling berharga ketika kita resmi menjadi pasangan</p>
                     </div>
 
                     <!-- Tahap 4 -->
@@ -892,63 +899,174 @@
 
                         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
                         <script>
-                            const client = supabase.createClient(
-                                'https://wjtfodlsujrjswyvxstq.supabase.co',
-                                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqdGZvZGxzdWpyanN3eXZ4c3RxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1NTA1OTYsImV4cCI6MjA2OTEyNjU5Nn0.0JMh1VFcxQTh5g63KL954q146YLOIijKm7HGD8OAK28'
-                            );
+                            // Supabase client initialization
+                            const supabaseUrl = 'https://wjtfodlsujrjswyvxstq.supabase.co';
+                            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqdGZvZGxzdWpyanN3eXZ4c3RxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1NTA1OTYsImV4cCI6MjA2OTEyNjU5Nn0.0JMh1VFcxQTh5g63KL954q146YLOIijKm7HGD8OAK28';
+                            const client = supabase.createClient(supabaseUrl, supabaseKey);
 
+                            // Date formatter - Fixed to use correct column name
                             function formatTanggal(tanggalStr) {
-                                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                                const options = {
+                                    weekday: 'long',
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                };
                                 return new Date(tanggalStr).toLocaleDateString('id-ID', options);
                             }
 
+                            // Fetch messages with realtime updates
                             async function ambilDataUcapan() {
-                                const { data, error } = await client
-                                    .from('messages')
-                                    .select('*')
-                                    .order('create_at', { ascending: false });
+                                try {
+                                    // Initial fetch - Using correct column name 'created_at'
+                                    const { data, error } = await client
+                                        .from('messages')
+                                        .select('*')
+                                        .order('created_at', { ascending: false }); // Changed from 'create_at' to 'created_at'
 
-                                if (error) {
-                                    console.error('Gagal ambil data:', error.message);
+                                    if (error) throw error;
+
+                                    renderMessages(data);
+
+                                    // Realtime subscription
+                                    const channel = client
+                                        .channel('messages-channel')
+                                        .on('postgres_changes', {
+                                            event: 'INSERT',
+                                            schema: 'public',
+                                            table: 'messages'
+                                        }, (payload) => {
+                                            const container = document.getElementById('list-ucapan');
+                                            const newCard = createMessageCard(payload.new);
+                                            container.insertAdjacentHTML('afterbegin', newCard);
+                                        })
+                                        .subscribe();
+
+                                    return () => client.removeChannel(channel);
+
+                                } catch (error) {
+                                    console.error('Error:', error.message);
+                                    document.getElementById('list-ucapan').innerHTML = `
+                <div class="col-12 text-center py-4">
+                    <p class="text-muted">Gagal memuat pesan. Silakan refresh halaman.</p>
+                </div>
+            `;
+                                }
+                            }
+
+                            // Create message card HTML - Removed like button
+                            function createMessageCard(item) {
+                                const tanggal = formatTanggal(item.created_at); // Using correct column name
+                                return `
+        <div class="col-md-6 mb-4">
+            <div class="message-card animate__animated animate__fadeIn">
+                <div class="message-header">
+                    <div class="message-avatar">
+                        <img src="${item.avatar_url || './assets/images/user.png'}" 
+                             alt="${item.name}" 
+                             onerror="this.src='./assets/images/user.png'">
+                    </div>
+                    <div class="message-user">
+                        <h6>${item.name || 'Anonymous'}</h6>
+                        <small>${item.subtitle || ''}</small>
+                    </div>
+                    <div class="message-date">${tanggal}</div>
+                </div>
+                <div class="message-content">
+                    <p>${item.message || ''}</p>
+                    ${item.image_url ? `<img src="${item.image_url}" class="message-image" loading="lazy">` : ''}
+                </div>
+            </div>
+        </div>`;
+                            }
+
+                            // Render all messages
+                            function renderMessages(messages) {
+                                const container = document.getElementById('list-ucapan');
+                                if (messages.length === 0) {
+                                    container.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <img src="./assets/images/love.svg" width="150" class="mb-3">
+                    <p class="text-muted">Belum ada pesan. Jadilah yang pertama!</p>
+                </div>
+            `;
                                     return;
                                 }
 
-                                const container = document.getElementById('list-ucapan');
-                                container.innerHTML = '';
-
-                                data.forEach((item) => {
-                                    const tanggal = formatTanggal(item.create_at);
-                                    const card = document.createElement('div');
-                                    card.className = 'col-md-6 mb-4';
-
-                                    card.innerHTML = `
-        <div class="d2c_card_wrapper"
-            style="background-color: #ffb5b5; border-radius: 15px; box-shadow: 0 5px 15px rgba(255,107,139,0.1); padding: 25px; position: relative;">
-            
-            <div style="position: absolute; top: 20px; right: 25px;">
-              <small class="text-muted">${tanggal}</small>
-            </div>
-
-            <div class="d-flex align-items-center mb-3">
-              <img src="${item.avatar_url || './assets/images/user.png'}" alt="${item.name}"
-                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-              <div class="ms-3">
-                <h6 style="margin: 0;">${item.name}</h6>
-                <small class="text-muted">${item.subtitle || ''}</small>
-              </div>
-            </div>
-
-            <p style="font-style: italic; color: #555;">"${item.message}"</p>
-        </div>
-      `;
-
-                                    container.appendChild(card);
-                                });
+                                container.innerHTML = messages.map(createMessageCard).join('');
                             }
 
-                            ambilDataUcapan();
-                        </script>
+                            // Initialize
+                            document.addEventListener('DOMContentLoaded', () => {
+                                ambilDataUcapan();
 
+                                // Add animation library
+                                const animateCSS = document.createElement('link');
+                                animateCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+                                animateCSS.rel = 'stylesheet';
+                                document.head.appendChild(animateCSS);
+                            });
+                        </script>
+                        <!-- <div class="d-flex justify-content-center mt-4">
+                            <button id="showMoreMessages" class="btn"
+                                style="background-color: transparent; border: 2px solid #ff6b8b; color: #ff6b8b; border-radius: 50px; padding: 8px 25px;">
+                                Buka Pesan Lainnya 💌
+                            </button>
+                        </div> -->
+                        <style>
+                            .message-card {
+                                background: white;
+                                border-radius: 15px;
+                                padding: 20px;
+                                box-shadow: 0 4px 12px rgba(255, 107, 139, 0.15);
+                                margin-bottom: 15px;
+                                border-left: 3px solid #ff6b8b;
+                            }
+
+                            .message-header {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 15px;
+                            }
+
+                            .message-avatar img {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                border: 2px solid #ffb5b5;
+                            }
+
+                            .message-user {
+                                margin-left: 15px;
+                                flex-grow: 1;
+                            }
+
+                            .message-user h6 {
+                                margin: 0;
+                                color: #333;
+                            }
+
+                            .message-date {
+                                color: #888;
+                                font-size: 0.8rem;
+                            }
+
+                            .message-content p {
+                                color: #555;
+                                line-height: 1.6;
+                            }
+
+                            .message-image {
+                                width: 100%;
+                                border-radius: 10px;
+                                margin-top: 10px;
+                                max-height: 200px;
+                                object-fit: cover;
+                            }
+                        </style>
 
 
 
@@ -970,12 +1088,7 @@
                         </div>
                     </div> -->
 
-                        <div class="d-flex justify-content-center mt-4">
-                            <button id="showMoreMessages" class="btn"
-                                style="background-color: transparent; border: 2px solid #ff6b8b; color: #ff6b8b; border-radius: 50px; padding: 8px 25px;">
-                                Buka Pesan Lainnya 💌
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -987,6 +1100,55 @@
         });
     </script>
     <!-- Blog Section End -->
+    <!-- Blog Start Playlist Song -->
+    <!-- Spotify Playlist Section -->
+    <!-- Spotify Playlist Section -->
+    <section class="d2c_spotify_wrapper" style="background: #fff5f5; padding: 60px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <h4 class="d2c_sub_title" style="color: #ff6b6b;">Our Special Playlist</h4>
+                    <h2 class="d2c_title">Lagu-Lagu Kenangan Kita</h2>
+                    <p class="d2c_title_content">Koleksi lagu yang punya cerita spesial dalam perjalanan kita...</p>
+                </div>
+            </div>
+
+            <div class="row mt-4 justify-content-center">
+                <!-- Single Centered Playlist Card -->
+                <div class="col-md-8 col-lg-6 mb-4">
+                    <div class="spotify-card"
+                        style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 auto;">
+                        <div class="spotify-header" style="background: #8a2be2; padding: 15px; color: white;">
+                            <h3 class="text-center mb-0">🎵 Lagu Cinta Kita</h3>
+                        </div>
+                        <div class="spotify-embed" style="padding: 20px;">
+                            <iframe
+                                src="https://open.spotify.com/embed/playlist/7qyLTJEWidhaqZwSgP4nEF?utm_source=generator"
+                                width="100%" height="380" frameborder="0" allowtransparency="true"
+                                allow="encrypted-media" style="border-radius: 12px;"></iframe>
+                        </div>
+                        <div class="spotify-footer" style="padding: 0 20px 20px;">
+                            <a href="https://open.spotify.com/playlist/7qyLTJEWidhaqZwSgP4nEF?si=6f40fb2b47f14a26"
+                                class="btn btn-spotify" style="background: #8a2be2; color: white; width: 100%;">
+                                <i class="fab fa-spotify me-2"></i> Buka di Spotify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <p class="text-muted" style="color: #8a2be2; font-style: italic;">
+                        <i class="fas fa-heart" style="color: #ff6b6b;"></i>
+                        Setiap lagu punya cerita tentang kita berdua
+                        <i class="fas fa-heart" style="color: #ff6b6b;"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog End Playlist Song-->
 
     <!-- Footer Section Start -->
     <footer class="d2c_footer_wrapper"
@@ -1004,7 +1166,7 @@
                         Terima kasih sudah menjadi bagian dari hidupku."
                     </p>
                     <div style="margin-top: 20px;">
-                        <img src="assets/images/couple_silhouette.png" alt="Kita" style="height: 60px; opacity: 0.8;">
+                        <img src="assets/images/romantic.png" alt="Kita" style="height: 60px; opacity: 0.8;">
                     </div>
                 </div>
 
@@ -1013,7 +1175,7 @@
                     <h6 style="color: white; margin-bottom: 20px; font-weight: 600;">Love Hotline 💌</h6>
                     <div class="d2c_info_wrapper d-flex align-items-center mb-3">
                         <span class="d2c_social_icon" style="color: white; margin-right: 15px;">📱</span>
-                        <a href="tel:+628123456789" style="color: white; text-decoration: none;">+62812-1184-6570</a>
+                        <a href="tel:+6281211846570" style="color: white; text-decoration: none;">+62812-1184-6570</a>
                     </div>
                     <div class="d2c_info_wrapper d-flex align-items-center mb-3">
                         <span class="d2c_social_icon" style="color: white; margin-right: 15px;">📧</span>
@@ -1025,7 +1187,84 @@
                         <p style="color: white; margin: 0;">Di hatiku selamanya</p>
                     </div>
                 </div>
+                <script>
+                    const express = require('express');
+                    const app = express();
+                    const PORT = 3000;
 
+                    app.get('/api/countdown', (req, res) => {
+                        // Get current date
+                        const now = new Date();
+
+                        // Set target date (next September 4th)
+                        let nextSep4 = new Date(now.getFullYear(), 8, 4); // Month is 0-indexed (8 = September)
+
+                        // If this year's September 4th has passed, use next year's
+                        if (now > nextSep4) {
+                            nextSep4 = new Date(now.getFullYear() + 1, 8, 4);
+                        }
+
+                        // Calculate time difference in milliseconds
+                        const diff = nextSep4 - now;
+
+                        // Convert to days, hours, minutes, seconds
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                        res.json({
+                            days,
+                            hours,
+                            minutes,
+                            seconds,
+                            nextAnniversary: nextSep4.toISOString()
+                        });
+                    });
+
+                    app.listen(PORT, () => {
+                        console.log(`Server running on port ${PORT}`);
+                    });
+
+                    // Function to update countdown
+                    async function updateCountdown() {
+                        try {
+                            const response = await fetch('/api/countdown');
+                            const data = await response.json();
+
+                            document.getElementById('anniversaryCountdown').innerHTML = `
+                            <div style="display: inline-block; text-align: center; margin-right: 10px;">
+                                <div style="font-size: 24px; font-weight: bold;">${data.days}</div>
+                                <div style="font-size: 12px;">Hari</div>
+                            </div>
+                            <div style="display: inline-block; text-align: center; margin-right: 10px;">
+                                <div style="font-size: 24px; font-weight: bold;">${data.hours.toString().padStart(2, '0')}</div>
+                                <div style="font-size: 12px;">Jam</div>
+                            </div>
+                            <div style="display: inline-block; text-align: center; margin-right: 10px;">
+                                <div style="font-size: 24px; font-weight: bold;">${data.minutes.toString().padStart(2, '0')}</div>
+                                <div style="font-size: 12px;">Menit</div>
+                            </div>
+                            <div style="display: inline-block; text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold;">${data.seconds.toString().padStart(2, '0')}</div>
+                                <div style="font-size: 12px;">Detik</div>
+                            </div>
+                        `;
+                        } catch (error) {
+                            console.error('Error fetching countdown:', error);
+                        }
+                    }
+
+                    // Update every second
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+
+                    // Add this to your existing DOMContentLoaded event listener
+                    document.addEventListener('DOMContentLoaded', () => {
+                        // ... your existing code ...
+                        updateCountdown();
+                    });
+                </script>
                 <!-- Bagian Kanan - Sosial Media + Countdown -->
                 <div class="col-md-3">
                     <h6 style="color: white; margin-bottom: 20px; font-weight: 600;">Follow Our Story</h6>
@@ -1034,40 +1273,81 @@
                         <a href="#" style="color: white; margin-right: 15px; font-size: 20px;">📸</a>
                         <a href="#" style="color: white; font-size: 20px;">🎵</a>
                     </div>
-
+                
                     <h6 style="color: white; margin-bottom: 10px; font-weight: 600;">Next Countdown ⏳</h6>
                     <div id="anniversaryCountdown" style="color: white;">
-                        <div style="display: inline-block; text-align: center; margin-right: 10px;">
-                            <div style="font-size: 24px; font-weight: bold;">365</div>
-                            <div style="font-size: 12px;">Hari</div>
-                        </div>
-                        <div style="display: inline-block; text-align: center;">
-                            <div style="font-size: 24px; font-weight: bold;">12:34:56</div>
-                            <div style="font-size: 12px;">Waktu</div>
-                        </div>
+                        <!-- Countdown will appear here -->
                     </div>
                 </div>
-            </div>
+                
+                <script>
+                    // Set your anniversary date (September 4)
+                    const ANNIVERSARY_MONTH = 8; // JavaScript months are 0-indexed (8 = September)
+                    const ANNIVERSARY_DATE = 4;
 
-            <!-- Garis Pembatas -->
-            <div style="border-top: 1px dashed rgba(255,255,255,0.3); margin: 40px 0;"></div>
+                    function updateCountdown() {
+                        const now = new Date();
+                        let currentYear = now.getFullYear();
 
-            <!-- Copyright -->
-            <div class="text-center">
-                <p style="color: rgba(255,255,255,0.7); margin: 0;">
-                    Made with ❤️ by <span style="font-weight: 600;">Razaan Kurniawan Putra</span> | © 2025 Your Birthday
-                </p>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+                        // Create this year's anniversary date
+                        let nextAnniv = new Date(currentYear, ANNIVERSARY_MONTH, ANNIVERSARY_DATE);
 
-    <!-- Scroll Button Start -->
-    <div id="scrollBtn" class="d2c_scroll_btn">
-        <a href="#">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </div>
+                        // If anniversary already passed this year, use next year
+                        if (now > nextAnniv) {
+                            nextAnniv = new Date(currentYear + 1, ANNIVERSARY_MONTH, ANNIVERSARY_DATE);
+                        }
+
+                        // Calculate difference in milliseconds
+                        const diff = nextAnniv - now;
+
+                        // Convert to time units
+                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                        // Update the HTML
+                        document.getElementById('anniversaryCountdown').innerHTML = `
+                        <div style="display: inline-block; text-align: center; margin-right: 10px;">
+                            <div style="font-size: 24px; font-weight: bold;">${days}</div>
+                            <div style="font-size: 12px;">Hari</div>
+                        </div>
+                        <div style="display: inline-block; text-align: center; margin-right: 10px;">
+                            <div style="font-size: 24px; font-weight: bold;">${hours.toString().padStart(2, '0')}</div>
+                            <div style="font-size: 12px;">Jam</div>
+                        </div>
+                        <div style="display: inline-block; text-align: center;">
+                            <div style="font-size: 24px; font-weight: bold;">${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div>
+                            <div style="font-size: 12px;">Waktu</div>
+                        </div>
+                    `;
+                    }
+
+                    // Run immediately and then every second
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+                </script>
+                </div>
+                
+                <!-- Garis Pembatas -->
+                <div style="border-top: 1px dashed rgba(255,255,255,0.3); margin: 40px 0;"></div>
+                
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p style="color: rgba(255,255,255,0.7); margin: 0;">
+                        Made with ❤️ by <span style="font-weight: 600;">Razaan Kurniawan Putra</span> | © 2025 Your Birthday
+                    </p>
+                </div>
+                </div>
+                </footer>
+                <!-- Footer Section End -->
+                
+                <!-- Scroll Button Start -->
+                <div id="scrollBtn" class="d2c_scroll_btn">
+                    <a href="#">
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
+                </div>
     <!-- Scroll Button  End -->
 
     <!-- Home Page End -->
