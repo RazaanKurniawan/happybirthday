@@ -91,29 +91,60 @@ setInterval(updateCounters, 1000);
 // Inisialisasi pertama kali
 updateCounters();
 
-document.querySelectorAll('.btn-select-food').forEach(button => {
-    button.addEventListener('click', function() {
-        const card = this.closest('.food-card');
-        const foodType = card.querySelector('.food-header h3').textContent;
-        const food = card.querySelector('select').value;
-        const drink = card.querySelector('input').value || "Terserah kamu";
-        
-        // Format WhatsApp message
-        const message = `*Pesanan Ulang Tahun*\n\n` +
-                       `Hai Sayangkuuu...\n` +
-                       `Aku mau pesan ini nih untuk ultah aku:\n\n` +
-                       `*${foodType}*\n` +
-                       `:happy Makanan: ${food}\n` +
-                       `Minuman: ${drink}\n\n` +
-                       `Bisa dibikinin untuk aku?\n` +
-                       `Makasih yaa... Love youuu!`;
-        
-        // Encode for WhatsApp URL
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/6281211846570?text=${encodedMessage}`;
-        
-        // Open WhatsApp
-        window.open(whatsappUrl, '_blank');
+document.addEventListener('DOMContentLoaded', function() {
+    // Sembunyikan semua input custom saat halaman dimuat
+    document.querySelectorAll('.custom-food-input').forEach(input => {
+        input.style.display = 'none';
+    });
+    
+    // Tangani perubahan pada semua dropdown makanan
+    document.querySelectorAll('.food-select').forEach(select => {
+        select.addEventListener('change', function() {
+            const customInput = this.parentElement.querySelector('.custom-food-input');
+            if (this.value === 'custom') {
+                customInput.style.display = 'block';
+            } else {
+                customInput.style.display = 'none';
+            }
+        });
+    });
+    
+    // Tangani klik tombol pesan
+    document.querySelectorAll('.btn-select-food').forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.food-card');
+            const foodType = card.querySelector('.food-header h3').textContent;
+            const foodSelect = card.querySelector('.food-select');
+            
+            // Ambil nilai makanan, jika custom gunakan nilai dari input custom
+            let food;
+            if (foodSelect.value === 'custom') {
+                const customInput = card.querySelector('.custom-food-input input');
+                food = customInput.value || "Makanan Custom";
+            } else {
+                food = foodSelect.value;
+            }
+            
+            const drinkInput = card.querySelector('.drink-input');
+            const drink = drinkInput.value || "Terserah kamu";
+            
+            // Format WhatsApp message
+            const message = `*Pesanan Ulang Tahun*\n\n` +
+                           `Hai Sayangkuuu...\n` +
+                           `Aku mau ini buat ultah aku:\n\n` +
+                           `*${foodType}*\n` +
+                           `Makanan: ${food}\n` +
+                           `Minuman: ${drink}\n\n` +
+                           `Ditunggu yaahh😊\n` +
+                           `Makasih sayang... Love youuu!`;
+            
+            // Encode for WhatsApp URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/6281211846570?text=${encodedMessage}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
     });
 });
 

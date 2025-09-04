@@ -349,11 +349,15 @@
                                     <ul>
                                         <li>
                                             <i class="fas fa-heart"></i>
-                                            Pertama kali ketemu dan kamu tersenyum malu-malu
+                                            Dulu mabar game Sky gandengan bareng kamu, terbang bareng kamu xixixi
                                         </li>
                                         <li>
                                             <i class="fas fa-heart"></i>
-                                            Saat kita jalan-jalan sampai lupa waktu
+                                            Kita first date beli Mie Ayam yang sekarang uda tutup😞
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-heart"></i>
+                                            Kita nobar di bioskop dan FIRST KISS kita disitu omaigat😮
                                         </li>
                                     </ul>
                                 </div>
@@ -363,11 +367,16 @@
                                     <ul>
                                         <li>
                                             <i class="fas fa-star"></i>
-                                            Kamu selalu sehat dan bahagia
+                                            Kamu selalu sehat dan bahagia.
                                         </li>
                                         <li>
                                             <i class="fas fa-star"></i>
-                                            Kita bisa bersama selamanya
+                                            Kita bisa jalin hubungan kita selama lama lama lama nya sampai maut memisahkan.
+                                        </li>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i>
+                                            Kamu dan Keluarga bisa sabar buat nunggu aku sampe aku bisa nikahin kamu.
                                         </li>
                                     </ul>
                                 </div>
@@ -1087,16 +1096,20 @@
                                 <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
                                     <i class="fas fa-utensils" style="color: #8a2be2; margin-right: 10px;"></i>
                                     <strong>Makanan:</strong>
-                                    <select class="form-select" style="display: inline-block; width: auto;">
+                                    <select class="form-select food-select" style="display: inline-block; width: auto;">
                                         <option>Mie Ayam</option>
                                         <option>Mie Gacoan</option>
                                         <option>Bakso</option>
+                                        <option value="custom">Custom (tulis sendiri)</option>
                                     </select>
+                                    <div class="custom-food-input">
+                                        <input type="text" class="form-control mt-2" placeholder="Tulis makanan custom kamu" style="display: inline-block; width: auto;">
+                                    </div>
                                 </li>
                                 <li style="padding: 8px 0;">
                                     <i class="fas fa-glass-whiskey" style="color: #8a2be2; margin-right: 10px;"></i>
                                     <strong>Minuman:</strong>
-                                    <input type="text" class="form-control" placeholder="Tulis minuman favoritmu"
+                                    <input type="text" class="form-control drink-input" placeholder="Tulis minuman favoritmu"
                                         style="display: inline-block; width: auto;">
                                 </li>
                             </ul>
@@ -1122,17 +1135,21 @@
                                 <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
                                     <i class="fas fa-utensils" style="color: #ff6b6b; margin-right: 10px;"></i>
                                     <strong>Makanan:</strong>
-                                    <select class="form-select" style="display: inline-block; width: auto;">
+                                    <select class="form-select food-select" style="display: inline-block; width: auto;">
                                         <option>Dimsum</option>
                                         <option>Kebab</option>
                                         <option>Corndog</option>
                                         <option>Solutang</option>
+                                        <option value="custom">Custom (tulis sendiri)</option>
                                     </select>
+                                    <div class="custom-food-input">
+                                        <input type="text" class="form-control mt-2" placeholder="Tulis makanan custom kamu" style="display: inline-block; width: auto;">
+                                    </div>
                                 </li>
                                 <li style="padding: 8px 0;">
                                     <i class="fas fa-glass-whiskey" style="color: #ff6b6b; margin-right: 10px;"></i>
                                     <strong>Minuman:</strong>
-                                    <input type="text" class="form-control" placeholder="Tulis minuman favoritmu"
+                                    <input type="text" class="form-control drink-input" placeholder="Tulis minuman favoritmu"
                                         style="display: inline-block; width: auto;">
                                 </li>
                             </ul>
@@ -1293,7 +1310,7 @@
                                     `*${item.name}*: 
 _"${item.message}"_
 
-Balas`);
+Reply: `);
 
                                 return `
 <div class="col-md-6 mb-4">
